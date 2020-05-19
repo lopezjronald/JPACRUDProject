@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:t="http://www.thymeleaf.org">
+
+<head>
+
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	
+	<title>Save New Airman</title>
+	<style>
+		.error {color:red}	
+	</style>
+	
+</head>
+<body>
+
+	<div class="container">
+	
+		<h3>Airman Directory</h3>
+		
+		<hr>
+		
+		<p class="h4 mb-4">Save New Airman Information</p>
+		
+		<form action="#" th:action="@{/allAirmen/save}" th:object="${airman}" method="POST">
+			  		
+			<input type="hidden" th:field="*{id}"/>
+			  			 	 
+			<input type="text" th:field="*{firstName}" class="form-control mb-4 col-4" placeholder="First Name" cssClass="error">		 
+			<input type="text" th:field="*{middleName}" class="form-control mb-4 col-4" placeholder="Middle Name">		 
+			<input type="text" th:field="*{lastName}" class="form-control mb-4 col-4" placeholder="Last Name">		 
+			Enlistment Date:		 
+			<input type="text" th:field="*{enlistmentDate}" class="form-control mb-4 col-4" placeholder="YYYY-MM-DD">
+			Separation Date:
+			<input type="text" th:field="*{separationDate}" class="form-control mb-4 col-4" placeholder="YYYY-MM-DD">		 
+			<input type="text" th:field="*{flight}" class="form-control mb-4 col-4" placeholder="Flight">		 
+			<input type="text" th:field="*{phoneNumber}" class="form-control mb-4 col-4" placeholder="Phone Number">		 
+			<input type="text" th:field="*{Email}" class="form-control mb-4 col-4" placeholder="Email">	
+			
+			<button type="submit" class="btn btn-info col-2">Save</button>
+						  			 
+		</form>
+		
+		<hr>
+		<a th:href="@{/allAirmen/list}">Back to Airmen Directory</a>
+		
+	</div>
+</body>
+</html>
